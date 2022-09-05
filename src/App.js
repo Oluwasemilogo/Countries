@@ -17,7 +17,7 @@ function App() {
   };
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <h1>Countries</h1>
       <div className="app_country">
         {country.map((item) => {
           return <CountryPage item={item} />;

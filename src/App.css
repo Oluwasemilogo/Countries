@@ -1,4 +1,14 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
+body {
+  background-color: hsl(0deg, 0%, 98%);
+}
+.app_country {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  overflow: scroll;
+}
