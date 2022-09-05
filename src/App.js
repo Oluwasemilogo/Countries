@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
+import CountryPage from "./Pages/CountryPage";
 
 function App() {
+  const [country, setCountry] = useState([]);
+
+  useEffect(() => {
+    getCountry();
+  }, []);
+
+  const getCountry = async () => {
+    const api = await fetch("https://restcountries.com/v3.1/all");
+    const data = await api.json();
+    setCountry(data);
+    console.log(data);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello World</h1>
+      <div className="app_country">
+        {country.map((item) => {
+          return <CountryPage item={item} />;
+        })}
+      </div>
     </div>
   );
 }
