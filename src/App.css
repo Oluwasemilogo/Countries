@@ -10,5 +10,28 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-  overflow: scroll;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 10px;
+}
+.theme_mode {
+  margin-right: 1rem;
+}
+.app_theme {
+  font-size: 19px;
+  cursor: pointer;
+}
+.dark-mode {
+  background-color: hsl(207, 26%, 17%);
+  color: #fff;
+  transition: background-color 0.25s ease-in-out;
+}
+.light-mode {
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(200, 15%, 8%);
+  transition: background-color 0.25s ease-in-out;
 }
