@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-// import Forms from "./Components/Forms";
 import CountryPage from "./Pages/CountryPage";
 
 function App() {
