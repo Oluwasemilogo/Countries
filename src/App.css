@@ -19,7 +19,7 @@ body {
   border: 10px;
 }
 .theme_mode {
-  margin-right: 1rem;
+  margin-right: 3rem;
 }
 .app_theme {
   font-size: 19px;
@@ -30,8 +30,38 @@ body {
   color: #fff;
   transition: background-color 0.25s ease-in-out;
 }
+.dark-mode .header {
+  background-color: hsl(209, 23%, 22%);
+}
 .light-mode {
   background-color: hsl(0, 0%, 98%);
   color: hsl(200, 15%, 8%);
   transition: background-color 0.25s ease-in-out;
+}
+.light-mode .header {
+  background-color: hsl(0, 0%, 100%);
+}
+.forms {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+.search_input {
+  padding: 15px 20px;
+  font-size: 16px;
+  margin-left: 1rem;
+  box-shadow: 7px 17px 20px -19px rgba(0, 0, 0, 0.37);
+  border: none;
+  outline: none;
+}
+.app_regions {
+  padding: 10px 24px;
+  font-size: 16px;
+  box-shadow: 7px 17px 20px -19px rgba(0, 0, 0, 0.37);
+  border: 0px;
+  outline: none;
+}
+.region_section {
+  margin-right: 3rem;
 }
