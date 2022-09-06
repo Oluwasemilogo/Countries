@@ -51,7 +51,9 @@ function App() {
       <div className="App">
         <div className="header">
           <div className="header_txt">
-            <h2>Where in the World?</h2>
+            <a href="/">
+              <h2>Where in the World?</h2>
+            </a>
           </div>
           <div className="theme_mode">
             <p className="app_theme" onClick={() => setDarkMode(!darkMode)}>
