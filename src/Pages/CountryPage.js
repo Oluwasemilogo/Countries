@@ -13,9 +13,18 @@ function CountryPage({ item }) {
         <div className="countries_content_details">
           <h2 className="country_name">{item.name.official}</h2>
           <div className="countries_details">
-            <p className="countries_population">Population:{item.population}</p>
-            <p className="countries_region">Region:{item.region}</p>
-            <p className="countries_capital">Capital:{item.capital}</p>
+            <p className="countries_detail">
+              Population:
+              <span className="country_details_answers">{item.population}</span>
+            </p>
+            <p className="countries_detail">
+              Region:
+              <span className="country_details_answers">{item.region}</span>
+            </p>
+            <p className="countries_detail">
+              Capital:
+              <span className="country_details_answers">{item.capital}</span>
+            </p>
           </div>
         </div>
       </div>

@@ -7,7 +7,8 @@
   box-shadow: 7px 17px 20px -19px rgba(0, 0, 0, 0.37);
   height: 400px;
   width: 320px;
-  margin-left: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 .countries_content img {
   height: 150px;
@@ -20,4 +21,19 @@
   padding: 1rem;
   line-height: 2rem;
   margin-top: 0.7rem;
+}
+.country_details_answers {
+  color: hsl(0, 0%, 65%);
+}
+.country_name {
+  font-size: 20px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  line-height: 24px;
+}
+.countries_detail {
+  font-size: 16px;
+  margin-bottom: 15px;
+  line-height: 20px;
+  margin-top: 10px;
 }
