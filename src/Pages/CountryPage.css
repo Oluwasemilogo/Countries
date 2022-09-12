@@ -37,3 +37,7 @@
   line-height: 20px;
   margin-top: 10px;
 }
+.text-link {
+  text-decoration: none;
+  color: inherit;
+}
