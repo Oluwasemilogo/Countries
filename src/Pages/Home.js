@@ -6,8 +6,8 @@ import { ThemeContext } from "./Context";
 
 function Home() {
   const [country, setCountry] = useState([]);
-  const [country0, setCountry0] = useState([]);
   const [region0, setRegion0] = useState("Filter by Region");
+  const { isToggle, country0 } = useContext(ThemeContext);
 
   const onChangeHandler = (value) => {
     if (value) {
@@ -36,18 +36,12 @@ function Home() {
   };
 
   useEffect(() => {
-    getCountry();
-  }, []);
+    setCountry(country0)
+    setRegion0(country0)
+  }, [country0]);
 
-  const getCountry = async () => {
-    const api = await fetch("https://restcountries.com/v3.1/all");
-    const data = await api.json();
-    setCountry(data);
-    setCountry0(data);
-    setRegion0(data);
-    console.log(data);
-  };
-  const { isToggle } = useContext(ThemeContext);
+;
+
   return (
     <div className={isToggle ? "light-mode" : "dark-mode"}>
       <div className="App">

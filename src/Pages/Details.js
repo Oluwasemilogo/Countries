@@ -1,21 +1,19 @@
 import React, { useState } from "react";
+import { useContext } from "react";
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import { ThemeContext } from "./Context";
 
 function Details() {
-  let params = useParams();
+  let {country} = useParams();
   const [details, setDetails] = useState([]);
-  const getDetails = async () => {
-    const api = await fetch(
-      `https://restcountries.com/v3.1/name/${params.name}`
-    );
-    const data = await api.json();
-    setDetails(data[0]);
-    console.log(data[0]);
-  };
+  const { country0 } = useContext(ThemeContext)
+
   useEffect(() => {
-    getDetails();
-  }, [params.name]);
+    const data = country0.filter(c => c.name.common.toLowerCase() === country.toLowerCase())
+    setDetails(...data)
+  }, [country0])
+  
 
   return (
     <div>
@@ -26,7 +24,9 @@ function Details() {
         </div>
       </Link>
       <div className="details_content">
-        <h1>{details.name.official}</h1>
+        <h3>{details?.name?.common}</h3>
+        <img src={details?.flags?.png} alt='' style={{height: '250px', width: '250px'}}></img>
+        <img src={details?.coatOfArms?.png} alt='' style={{height: '50px', width: '50px'}}></img>
       </div>
     </div>
   );
