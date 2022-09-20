@@ -5,15 +5,16 @@ import { Link, useParams } from "react-router-dom";
 import { ThemeContext } from "./Context";
 
 function Details() {
-  let {country} = useParams();
+  let { country } = useParams();
   const [details, setDetails] = useState([]);
-  const { country0 } = useContext(ThemeContext)
+  const { country0 } = useContext(ThemeContext);
 
   useEffect(() => {
-    const data = country0.filter(c => c.name.common.toLowerCase() === country.toLowerCase())
-    setDetails(...data)
-  }, [country0])
-  
+    const data = country0.filter(
+      (c) => c.name.common.toLowerCase() === country.toLowerCase()
+    );
+    setDetails(...data);
+  }, [country0]);
 
   return (
     <div>
@@ -25,8 +26,16 @@ function Details() {
       </Link>
       <div className="details_content">
         <h3>{details?.name?.common}</h3>
-        <img src={details?.flags?.png} alt='' style={{height: '250px', width: '250px'}}></img>
-        <img src={details?.coatOfArms?.png} alt='' style={{height: '50px', width: '50px'}}></img>
+        <img
+          src={details?.flags?.png}
+          alt=""
+          style={{ height: "260px", width: "250px" }}
+        ></img>
+        <img
+          src={details?.coatOfArms?.png}
+          alt=""
+          style={{ height: "50px", width: "50px" }}
+        ></img>
       </div>
     </div>
   );
