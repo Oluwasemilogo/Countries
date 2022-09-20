@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./Home.css";
 import CountryPage from "./CountryPage";
+import Header from "./Header";
+import { ThemeContext } from "./Context";
 
 function Home() {
   const [country, setCountry] = useState([]);
-  const [darkMode, setDarkMode] = useState(false);
   const [country0, setCountry0] = useState([]);
   const [region0, setRegion0] = useState("Filter by Region");
 
@@ -46,26 +47,20 @@ function Home() {
     setRegion0(data);
     console.log(data);
   };
+  const { isToggle } = useContext(ThemeContext);
   return (
-    <div className={darkMode ? "dark-mode" : "light-mode"}>
+    <div className={isToggle ? "light-mode" : "dark-mode"}>
       <div className="App">
-        <div className="header">
-          <div className="header_txt">
-            <h2>Where in the World?</h2>
-          </div>
-          <div className="theme_mode">
-            <p className="app_theme" onClick={() => setDarkMode(!darkMode)}>
-              <i className="fa-regular fa-moon"></i>
-              {darkMode ? "Light" : "Dark"} Mode
-            </p>
-          </div>
-        </div>
+        <Header />
+
         <div className="forms">
           <form className="app_search">
             <input
               type="text"
               placeholder="Search for a Country"
-              className="search_input"
+              className={`search_input ${
+                isToggle ? "light-mode" : "dark-mode"
+              }`}
               onInput={(e) => onChangeHandler(e.target.value)}
             />
           </form>

@@ -32,25 +32,13 @@ body {
   color: #fff;
   transition: background-color 0.25s ease-in-out;
 }
-.dark-mode .header {
-  background-color: hsl(209, 23%, 22%);
-}
+
 .light-mode {
   background-color: hsl(0, 0%, 98%);
   color: hsl(200, 15%, 8%);
   transition: background-color 0.25s ease-in-out;
 }
-.light-mode .header {
-  background-color: hsl(0, 0%, 100%);
-}
-.light-mode .search_input {
-  background-color: hsl(0, 0%, 100%);
-  color: hsl(200, 15%, 8%);
-}
-.dark-mode .search_input {
-  background-color: hsl(209, 23%, 22%);
-  color: #fff;
-}
+
 .forms {
   display: flex;
   align-items: center;
