@@ -19,7 +19,9 @@ body {
   padding: 1rem;
   border: 10px;
 }
-
+.header_txt {
+  margin-left: 4rem;
+}
 .theme_mode {
   margin-right: 3rem;
 }
@@ -102,6 +104,7 @@ body {
     margin-left: 30px;
   }
   .header_txt {
+    margin-left: 0rem;
     font-size: 12px;
   }
   .app_theme {
