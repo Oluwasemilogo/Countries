@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function CountryPage({ item }) {
   return (
-    <Link to="/details" className="text-link">
+    <Link to={`/details/${item.name.common}`} className="text-link">
       <div className="countries">
         <div className="countries_content">
           <img
